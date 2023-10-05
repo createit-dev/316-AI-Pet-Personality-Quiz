@@ -29,13 +29,15 @@ function submitAipetpersonalityForm() {
     jQuery('select[name^="question_"]').each(function() {
         answers.push(jQuery(this).val());
     });
+    var quiz_topic = jQuery('input[name^="quiz_topic"]').val();
 
     jQuery.ajax({
         type: "POST",
         url: frontendajax.ajaxurl,
         data: {
             action: "fetch_pet_personality",
-            answers: answers
+            answers: answers,
+            quiz_topic: quiz_topic
         },
         success: function(response) {
             jQuery('#aipetpersonality-result').html(response.description);
