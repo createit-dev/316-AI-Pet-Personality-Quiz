@@ -867,3 +867,25 @@ function aipetpersonality_api_key_callback() {
 }
 
 
+/**
+ * Template - landing page for demos
+ */
+
+function aipetpersonality_add_template_to_pages($templates) {
+    $templates['ai-quizzes-template.php'] = 'AI Personality Quizzes';
+    return $templates;
+}
+add_filter('theme_page_templates', 'aipetpersonality_add_template_to_pages');
+
+function aipetpersonality_redirect_custom_template($template) {
+    $post = get_post();
+    $page_template = get_post_meta($post->ID, '_wp_page_template', true);
+
+    if ('ai-quizzes-template.php' == basename($page_template)) {
+        $template = dirname(__FILE__) . '/ai-quizzes-template.php';
+        return $template;
+    }
+
+    return $template;
+}
+add_filter('page_template', 'aipetpersonality_redirect_custom_template');
