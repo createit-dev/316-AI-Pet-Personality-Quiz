@@ -84,3 +84,5 @@ $ai_quiz_config = [
 ## Social Media Sharing
 
 After completing the quiz and getting insights into your pet's personality, users have the option to share quiz page url on social media. This feature encourages more users to participate and discover their pets' unique personalities. The sharing text and call-to-action can be customized in the `$ai_quiz_config` array for a personalized touch.
+
+Read more on our site: https://www.createit.com/blog/ai-pet-personality-quiz-revealing-your-pets-unique-traits/
